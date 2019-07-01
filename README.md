@@ -1,4 +1,4 @@
-![Drag Racing](src/img/logo.png =250x)
+![Drag Racing](src/img/logo.png)
 ## Available Scripts
 
 In the project directory, you can run:
