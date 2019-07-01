@@ -1,33 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Fresca&display=swap');
+
+body button {
+  font-family: 'Fresca', sans-serif;;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
+.Homepage-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
-.App-header {
-  background-color: #282c34;
+.Homepage {
+  background-color: #fff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  color: #000;
+}
+
+.Homepage .container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.Homepage .container .left img {
+  padding: 20px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.Homepage .container .right p {
+  width: 100%;
+  max-width: 200px;
+  text-align: right;
+  padding-left: 50px;
+}
+
+.Homepage .container .right button {
+  padding: 20px;
+  background-color: aqua;
+  font-size: 4rem;
+  text-transform: uppercase;
   color: white;
+  border-color: transparent;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  cursor:pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.AddActivity {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 0 auto;
 }
+
+.AddActivity button {
+  padding: 20px;
+  background-color: aqua;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: white;
+  border-color: transparent;
+}
+
+.AddActivity textarea {
+  padding-bottom: 40px;
+  margin-bottom: 30px;
+}
+
+.AddActivity button,
+.AddActivity textarea,
+.AddActivity input,
+.AddActivity h2 {
+  display: block;
+}
+
