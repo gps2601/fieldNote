@@ -1,7 +1,11 @@
 /** @jsx jsx */
 import {css, jsx} from '@emotion/core'
+import { useState } from 'react'
+
 
 const Activities = ({activities}) => {
+    const [showActivities, setShowActivities] = useState(false)
+
     return (
         <div className="Activities" css={css`
         display: grid;
@@ -10,8 +14,9 @@ const Activities = ({activities}) => {
         width: 100vw;
         height: 100vh;
         @media (max-width: 800px) {
-            grid-template-columns: 80px auto;
-            grid-template-areas: "sidebar-mobile main";
+            grid-template-columns: 80px 100%;
+            grid-template-areas: "sidebar-mobile 
+            ${showActivities ? 'sidebar-desktop' : 'main' }";
         }
         `}>
             <ul className="List" css={css`
@@ -21,7 +26,7 @@ const Activities = ({activities}) => {
                text-align: left;
                list-style-type: none;
                @media (max-width: 800px) {
-                display: none;
+                    display: ${showActivities ? 'block' : 'none'};
                }
                 `}>
                 {activities.map((activity, index) => {
@@ -45,10 +50,49 @@ const Activities = ({activities}) => {
                 display: none;
                }
                 `}>
-                hello
+                <div css={css`
+                    display: block;
+                    padding-top: 20px;
+                    padding-left: 20px;
+                    `} onClick={() => setShowActivities(!showActivities)}>
+                    <span css={css`
+                        display: block;
+                        width: 33px;
+                        height: 4px;
+                        margin-bottom: 4px;
+                        position: relative;
+                        background: #cdcdcd;
+                        border-radius: 3px;
+                        z-index: 1;
+                    `}/>
+                    <span/>
+                    <span css={css`
+                        display: block;
+                        width: 33px;
+                        height: 4px;
+                        margin-bottom: 4px;
+                        position: relative;
+                        background: #cdcdcd;
+                        border-radius: 3px;
+                        z-index: 1;
+                    `}/>
+                    <span/>
+                    <span css={css`
+                        display: block;
+                        width: 33px;
+                        height: 4px;
+                        margin-bottom: 4px;
+                        position: relative;
+                        background: #cdcdcd;
+                        border-radius: 3px;
+                        z-index: 1;
+                    `}/>
+                    <span/>
+                </div>
             </ul>
             <div className="Detail" css={css`
                grid-area: main;
+               display: ${showActivities ? 'none' : 'block'};
                `}>
             </div>
         </div>
